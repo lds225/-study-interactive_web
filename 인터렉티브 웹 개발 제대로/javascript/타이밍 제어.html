@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+<button class="btn">취소</button>
+
+<script>
+    // 타이밍제어
+
+    // * setTimeout(함수, 초) -> 초 만큼 지연 후 동작
+    // setTimeout(function () {
+    //     console.log('setTimeout!');
+    // }, 3000);
+
+    let timeId;
+    let n = 0;
+    const btn = document.querySelector('.btn');
+
+    function sample(){
+        n++;
+        console.log('sample!');
+        // * requestAnimationFrame -> setInterval의 단점을 보완
+        if(n > 200) {
+            return;
+            // 200에 리턴하여 동작 종료
+        }
+
+        timeId =requestAnimationFrame(sample);
+    }
+    sample(); // 계속 호출하여 60분의 1초로 반복 됨
+
+    // setTimeout처럼 한번만 실행
+    // requestAnimationFrame(sample); 
+
+    // * setInterval(함수, 초) -> 초마다 반복
+    // 반복 , 갱신할 때 사용 
+    // 단점 : 사용 디바이스 성능 낮을 시 과부화 걸릴 가능성 있음
+    // timeId = setInterval(sample, 1000/60);
+
+    // setTimeout의 리턴값은 반복한 숫자
+    // timeId = setTimeout(sample, 3000);
+    
+    // console.log(timeId)
+
+    // * clearTimeout(setTimeout값 or setInterval값) 실행 취소
+    // clearTimeout(timeId);
+
+    
+    btn.addEventListener('click', function(){
+        // clearTimeout(timeId);
+        cancelAnimationFrame(timeId);
+    });
+
+     
+
+
+</script>
+</body>
+</html>

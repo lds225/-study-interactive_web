@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition / Animation Event</title>
+    <style>
+        .ball {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            /* margin: -15px 0 0 -15px; */  
+            border-radius: 50%;
+            background: red;
+            /* animation: ball-ani 1s 3 alternate forwards; */
+        }
+        .ball.end {
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+
+    <script>
+        // 트랜지션 
+        const ballElem = document.querySelector('.ball');
+
+        window.addEventListener('click', function(e){
+            // ballElem.style.transform = 'translate(' + (e.clientX -15) + 'px, ' + (e.clientY -15) + 'px)';
+        });
+
+        // transitionend -> 트랜지션이 끝날 때 발생 transitionstart -> 트랜지션이 시작할 때 발생
+        ballElem.addEventListener('transitionstart', function(e){
+            ballElem.classList.add('end');
+            // 트렌지션 지속시간
+            console.log(e.elapsedTime); 
+            // 바뀌는 속성 감지
+            console.log(e.propertyName); 
+        });
+
+  
+    </script>
+
+</body>
+</html>

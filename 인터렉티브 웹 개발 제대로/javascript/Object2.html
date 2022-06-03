@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta nickname="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object2</title>
+</head>
+<body>
+    <h1>Object2</h1>
+
+    <script>
+    // 생성자 (constructor) : 객체를 생성해내는 함수 앞글자 대문자로
+    // 구버전
+    function Person(nickname, age) {
+        this.nickname = nickname;
+        this.age = age;
+        // 각각 의 변수에서 메모리 점유됨 
+        this.introduce = function(){
+            console.log('안녕 나는 ' + this.nickname + '이고 ' + this.age +'살이야');
+        }
+    }
+    
+
+    // 함수를 생성자로 호출하고 싶을 때는 new 
+    // 인스턴스(instance) : 생성자 함수로 생성된 각각의 객체
+    const person1 = new Person('일분이',10);
+    const person2 = new Person('이분이',8);
+
+    person1.introduce();
+    person2.introduce();
+    </script>
+</body>
+</html>
