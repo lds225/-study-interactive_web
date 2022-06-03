@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .container { 
+            display:flex; /* flex container안에 item들을 어떠한 형태로 배치 */
+            flex-direction: row; /*  default값은 row 메인축, column은 오뎅꼬치 세로축, 각 축 뒤에 -reverse를 붙이면 반대로 배치됨 */
+            justify-content: flex-start; /* 메인축의 정렬 default : flex-start*/ 
+            align-items: stretch; /* 세로축의 정렬 defalut : stretch   */
+            height: 80vh;
+            background: gray;
+        }
+        .item {
+            /* 컨텐츠를 제외한 여백을 줌 각 아이템들의 컨텐츠 크기가 다른 경우가 많아 이 속성 혼자만으로는 원하는대로 영역잡기 어려움*/
+            /* flex-grow: 1;  */
+            /* 원래 갖고있는 컨텐츠 사이즈를 잡아줌 기본값 auto*/
+            /* flex-basis: 0;  */
+            flex: 1; /* = flex-grow:1; flex-shrink:1; flex-basis:0 의 축약형 */
+            padding: 2em;
+            border: 3px solid black;
+            background: white;
+        }
+        /* .item:nth-child(1){flex-grow: 1;}
+        .item:nth-child(2){flex-grow: 5;}
+        .item:nth-child(3){flex-grow: 2;}
+        .item:nth-child(4){flex-grow: 3;}
+        .item:nth-child(5){flex-grow: 1;} */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">AAA</div>
+        <div class="item">B</div> 
+        <div class="item">CCCCC</div>
+        <div class="item">DDD</div>
+        <div class="item">E</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .box-container{
+            display:flex;
+        }
+        .box{
+            width:100px;
+            height:100px;
+            border: 2px solid black;
+            background: rgba(255, 255, 0, 0.7);
+        }
+        .box:hover {
+            /* transform: scale(2) rotate(15deg) */
+            /* transform: skew(10deg); */
+            /* transform: translate(30px, 10px); */
+            /* transform: translateY(-30px); */
+            /* transform: scale(1.5); */
+            transform:rotate(30deg);
+            transform-origin: 100% 100%;
+            /* transform-origin 으로 기준점 조정 top right left bottom 숫자 값   */
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Transform</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem natus reiciendis quae earum veritatis atque commodi enim ullam amet facilis a magni quos dignissimos non, provident quia aut minima quod?</p>
+    <div class="box-container">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem natus reiciendis quae earum veritatis atque commodi enim ullam amet facilis a magni quos dignissimos non, provident quia aut minima quod?</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setAttribute</title>
+</head>
+<body>
+<h1>속성 추가 & 속성 값 가져오기</h1>
+<div class="box a"></div>
+<div class="box b"></div>
+<div class="box c"></div>
+<div class="box d"></div>
+<script>
+    let a = document.querySelector('.a');
+    a.setAttribute('data-id', 123); // setAttribute로 속성 추가 => a에 data-id 속성을 추가하고 그 값을 123으로 하겠다.
+    let value = a.getAttribute('data-id'); //변수명.getAttribute('속성명') => 속성 값 가져오기  123 출력
+    console.log(value);
+</script>    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D1</title>
+    <style>
+        .world{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80vw; /*뷰포트 단위 창크기*/
+            height: 80vh; 
+            background-color: pink;
+            /* perspective: 500px; */
+        }
+        .card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 150px;
+            margin: 1em;
+            border-radius: 0.5em; /*현재 엘리먼트의 폰트 사이즈에 비례*/
+            font-size: 1.5rem; /*부모 폰트사이즈 기준*/
+            background-color: red;
+            transform: rotateY(0deg); /* default 값을 선언해 주는게 성능에 더 좋다고 한다 */
+            transition: 1s;
+            perspective: 500px;
+        }
+        .world:hover .card{
+            transform: rotateY(180deg)
+        }
+    </style>
+</head>
+<body>
+    <div class="world">
+        <div class="card">CARD</div>
+        <div class="card">CARD</div>
+        <div class="card">CARD</div>
+    </div>
+</body>
+</html>

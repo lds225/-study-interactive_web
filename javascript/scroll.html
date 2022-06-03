@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        img{
+            max-width: 100%;
+        }
+        .content{
+            height: 1000vh;
+            padding: 20%;
+            background: yellowgreen;
+        }
+        .output {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 200;
+            color: #fff;
+            background: rgba(0,0,0,0.4);
+        }
+        .jjanggu {
+            width: 100px;
+            margin: 20px auto;
+            transition: 1s;
+            background-color: #fff;
+        }
+        .jjanggu.zoom {
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="output">output</div>
+    <div class="content">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis hic ipsa, cupiditate rerum inventore quod animi expedita optio labore mollitia commodi deleniti corrupti recusandae pariatur sit? Non recusandae unde et? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis eaque corrupti maxime eveniet repudiandae beatae officiis corporis facere repellat est, cupiditate odit ea qui possimus omnis, excepturi provident obcaecati fuga. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis eaque corrupti maxime eveniet repudiandae beatae officiis corporis facere repellat est, cupiditate odit ea qui possimus omnis, excepturi provident obcaecati fuga.
+        </p>
+        <figure class="jjanggu">
+            <img src="img/jjang_01.png" alt="짱구">
+        </figure>
+    </div>
+
+    <script>
+        (function(){
+            const outputElem = document.querySelector('.output');
+            const jjangguElem = document.querySelector('.jjanggu');
+
+            function showValue() {
+                // 스크롤 값 가져오기
+                // outputElem.innerHTML = window.pageYOffset; 
+                // 엘리먼트의 위치 (고정)
+                // outputElem.innerHTML = jjangguElem.offsetTop;
+                // 스크롤시 엘리먼트 위치
+                let posY = jjangguElem.getBoundingClientRect().top;
+                outputElem.innerHTML = posY;
+
+                console.log(jjangguElem.getBoundingClientRect());
+                if(posY < window.innerHeight * 0.2) {
+                    jjangguElem.classList.add('zoom');
+                } else {
+                    jjangguElem.classList.remove('zoom');
+
+                }
+            }
+              
+            // 이벤트 리스너는 단순하게 이벤트 리스너 함수자체를 빼서 만드는 것도 좋다.
+            window.addEventListener('scroll', function(){
+                showValue();
+            });
+
+            showValue();
+
+        })();
+    </script>
+</body>
+</html>
