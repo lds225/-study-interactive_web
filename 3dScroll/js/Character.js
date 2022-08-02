@@ -105,6 +105,22 @@ Character.prototype = {
                 self.run(self);
                 // self.run();
                 self.runningState = true;
+            }else if(e.keyCode == 40){
+                //앞쪽
+                self.direction = 'forward';
+                self.mainElem.setAttribute('data-direction', 'forward');
+                self.mainElem.classList.add('running');
+                self.run(self);
+                // self.run();
+                self.runningState = true;
+            }else if(e.keyCode == 38){
+                //뒷쪽
+                self.direction = 'backward';
+                self.mainElem.setAttribute('data-direction', 'backward');
+                self.mainElem.classList.add('running');
+                self.run(self);
+                // self.run();
+                self.runningState = true;
             }
         });
 
